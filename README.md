@@ -1,24 +1,32 @@
 # CalculaJá
 
-Site de ferramentas gratuitas para publicação em GitHub Pages.
+Site estático com 5 calculadoras:
+- Porcentagem
+- Juros simples
+- Idade
+- IMC
+- Combustível
 
-## Arquivos
-- `index.html` — página principal com 5 calculadoras.
-- `privacidade.html` — política de privacidade.
-- `termos.html` — termos de uso.
-- `ads.txt` — arquivo de autorização de anúncios.
-- `README.md` — instruções.
+## Publicar no GitHub Pages
 
-## Publicação no GitHub Pages
 1. Crie um repositório no GitHub.
-2. Envie os arquivos para a raiz do repositório.
-3. No GitHub, abra Settings > Pages.
-4. Em Source, selecione a branch principal e a pasta `/root`.
-5. Salve e aguarde a publicação.
+2. Envie todos os arquivos desta pasta para a raiz do repositório.
+3. No GitHub, abra **Settings → Pages**.
+4. Em **Build and deployment**, escolha **Deploy from a branch**.
+5. Selecione a branch principal (normalmente `main`) e a pasta `/ (root)`.
+6. Salve e aguarde a publicação.
 
 ## AdSense
-O código usa o ID informado: `ca-pub-4891461400342958`.
 
-Importante: o ID precisa corresponder à conta do AdSense proprietária do site. A aprovação do site pelo Google é necessária antes de esperar receita de anúncios. Os blocos visuais de anúncio incluídos no `index.html` são espaços reservados; os formatos de anúncio devem ser configurados no AdSense conforme a aprovação e as instruções da conta.
+O código já contém o identificador:
+`ca-pub-4891461400342958`
 
-Antes de publicar, substitua o texto de contato da Política de Privacidade por um e-mail real para contato.
+A aprovação e a exibição efetiva de anúncios dependem do Google AdSense. Os espaços de anúncio não garantem receita.
+
+## Estrutura
+
+- `index.html` — página principal
+- `style.css` — visual
+- `script.js` — funcionamento das calculadoras
+- `privacidade.html` — política de privacidade
+- `termos.html` — termos de uso
