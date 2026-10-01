@@ -3,214 +3,173 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CalculaJá: ferramentas gratuitas online para porcentagem, juros simples, idade, IMC e combustível.">
+  <meta name="description" content="CalculaJá: calculadoras online gratuitas de porcentagem, juros simples, idade, IMC e combustível.">
   <meta name="robots" content="index, follow">
   <meta name="google-adsense-account" content="ca-pub-4891461400342958">
-  <title>CalculaJá - Ferramentas Gratuitas</title>
+  <title>CalculaJá | Calculadoras Online Gratuitas</title>
 
-  <!-- Google AdSense -->
   <script async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4891461400342958"
     crossorigin="anonymous"></script>
 
   <style>
+    :root{
+      --navy:#0b1736;
+      --navy-2:#12245a;
+      --blue:#2563eb;
+      --blue-2:#3b82f6;
+      --cyan:#22d3ee;
+      --blue-soft:#eff6ff;
+      --text:#172033;
+      --muted:#667085;
+      --bg:#f5f7fb;
+      --card:#fff;
+      --border:#e5e7eb;
+      --green:#047857;
+      --red:#b91c1c;
+    }
+
     *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:Arial,Helvetica,sans-serif;background:#f4f6f8;color:#222;line-height:1.5}
-    header{background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;padding:36px 20px;text-align:center}
-    header h1{font-size:38px;margin-bottom:6px}
-    header p{font-size:17px}
-    nav{background:#fff;padding:12px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.08);position:sticky;top:0;z-index:10}
-    nav a{color:#1d4ed8;text-decoration:none;margin:0 9px;font-weight:bold;font-size:14px}
-    .container{width:92%;max-width:1100px;margin:30px auto}
-    .intro{text-align:center;margin-bottom:25px}
-    .intro h2{font-size:28px;margin-bottom:7px}
-    .tools{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
-    .card{background:#fff;padding:25px;border-radius:14px;box-shadow:0 4px 15px rgba(0,0,0,.08)}
-    .card h3{color:#1d4ed8;margin-bottom:7px;font-size:21px}
-    .card p{color:#666;margin-bottom:16px;font-size:14px}
-    label{display:block;margin-top:12px;margin-bottom:5px;font-weight:bold;font-size:14px}
-    input,select{width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;font-size:16px;outline:none}
-    input:focus,select:focus{border-color:#2563eb}
-    button{width:100%;margin-top:17px;padding:13px;border:0;border-radius:8px;background:#2563eb;color:#fff;font-size:16px;font-weight:bold;cursor:pointer}
-    button:hover{background:#1d4ed8}
-    .resultado{display:none;margin-top:17px;padding:13px;border-radius:8px;background:#eff6ff;border-left:4px solid #2563eb;font-weight:bold}
-    .erro{background:#fef2f2;border-left-color:#dc2626;color:#b91c1c}
-    .ad{min-height:100px;margin:25px 0;border:1px dashed #bbb;border-radius:10px;display:flex;justify-content:center;align-items:center;color:#999;background:#fafafa;font-size:13px;text-align:center}
-    footer{margin-top:40px;padding:30px 20px;background:#111827;color:#fff;text-align:center}
-    footer p{margin:5px;color:#d1d5db;font-size:14px}
-    footer a{color:#fff}
-    @media(max-width:700px){header h1{font-size:30px}.tools{grid-template-columns:1fr}.container{width:94%}nav a{display:inline-block;margin:5px}}
-  </style>
-</head>
-<body>
-<header>
-  <h1>CalculaJá</h1>
-  <p>Ferramentas gratuitas para facilitar suas contas</p>
-</header>
+    html{scroll-behavior:smooth}
 
-<nav>
-  <a href="#porcentagem">Porcentagem</a>
-  <a href="#juros">Juros</a>
-  <a href="#idade">Idade</a>
-  <a href="#imc">IMC</a>
-  <a href="#combustivel">Combustível</a>
-</nav>
+    body{
+      font-family:Inter,Arial,Helvetica,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
 
-<main class="container">
-  <section class="intro">
-    <h2>Ferramentas Gratuitas</h2>
-    <p>Escolha uma calculadora e faça sua conta rapidamente.</p>
-  </section>
+    /* ===== CABEÇALHO ===== */
+    header{
+      position:relative;
+      overflow:hidden;
+      color:#fff;
+      background:
+        radial-gradient(circle at 15% 20%,rgba(34,211,238,.18),transparent 28%),
+        radial-gradient(circle at 90% 80%,rgba(59,130,246,.25),transparent 30%),
+        linear-gradient(135deg,var(--navy),var(--navy-2));
+      padding:28px 20px 72px;
+    }
 
-  <!-- Espaço para anúncio -->
-  <div class="ad">
-    <!-- Depois da aprovação, você pode inserir aqui um bloco de anúncio criado no AdSense. -->
-    Espaço para anúncio
-  </div>
+    header::after{
+      content:"";
+      position:absolute;
+      width:430px;
+      height:430px;
+      right:-190px;
+      top:-230px;
+      border:1px solid rgba(255,255,255,.09);
+      border-radius:50%;
+      box-shadow:0 0 0 45px rgba(255,255,255,.025),
+                 0 0 0 90px rgba(255,255,255,.018);
+    }
 
-  <section class="tools">
-    <div class="card" id="porcentagem">
-      <h3>📊 Calculadora de Porcentagem</h3>
-      <p>Descubra quanto representa uma porcentagem de determinado valor.</p>
-      <label for="porcentagemValor">Valor</label>
-      <input type="number" id="porcentagemValor" placeholder="Ex.: 500">
-      <label for="porcentagemPercentual">Porcentagem (%)</label>
-      <input type="number" id="porcentagemPercentual" placeholder="Ex.: 10">
-      <button onclick="calcularPorcentagem()">Calcular</button>
-      <div class="resultado" id="resultadoPorcentagem"></div>
-    </div>
+    .topbar{
+      position:relative;
+      z-index:2;
+      max-width:1120px;
+      margin:0 auto 62px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
 
-    <div class="card" id="juros">
-      <h3>💰 Calculadora de Juros</h3>
-      <p>Calcule juros simples sobre um valor.</p>
-      <label for="jurosCapital">Valor inicial (R$)</label>
-      <input type="number" id="jurosCapital" placeholder="Ex.: 1000">
-      <label for="jurosTaxa">Taxa de juros (%)</label>
-      <input type="number" id="jurosTaxa" placeholder="Ex.: 10">
-      <label for="jurosTempo">Tempo</label>
-      <input type="number" id="jurosTempo" placeholder="Ex.: 5">
-      <label for="jurosPeriodo">Período da taxa</label>
-      <select id="jurosPeriodo">
-        <option value="mes">Meses</option>
-        <option value="ano">Anos</option>
-      </select>
-      <button onclick="calcularJuros()">Calcular</button>
-      <div class="resultado" id="resultadoJuros"></div>
-    </div>
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:#fff;
+      text-decoration:none;
+      font-size:20px;
+      font-weight:900;
+    }
 
-    <div class="card" id="idade">
-      <h3>🎂 Calculadora de Idade</h3>
-      <p>Informe sua data de nascimento e descubra sua idade.</p>
-      <label for="dataNascimento">Data de nascimento</label>
-      <input type="date" id="dataNascimento">
-      <button onclick="calcularIdade()">Calcular idade</button>
-      <div class="resultado" id="resultadoIdade"></div>
-    </div>
+    .brand-logo{
+      width:42px;
+      height:42px;
+      display:grid;
+      place-items:center;
+      border-radius:12px;
+      background:linear-gradient(145deg,#fff,#dff8ff);
+      box-shadow:0 8px 24px rgba(0,0,0,.18);
+    }
 
-    <div class="card" id="imc">
-      <h3>⚖️ Calculadora de IMC</h3>
-      <p>Calcule seu Índice de Massa Corporal.</p>
-      <label for="peso">Peso (kg)</label>
-      <input type="number" id="peso" step="0.1" placeholder="Ex.: 70">
-      <label for="altura">Altura (m)</label>
-      <input type="number" id="altura" step="0.01" placeholder="Ex.: 1.75">
-      <button onclick="calcularIMC()">Calcular IMC</button>
-      <div class="resultado" id="resultadoIMC"></div>
-    </div>
+    .brand-logo svg{width:28px;height:28px}
 
-    <div class="card" id="combustivel">
-      <h3>⛽ Calculadora de Combustível</h3>
-      <p>Descubra quanto você gastará em combustível na viagem.</p>
-      <label for="distancia">Distância da viagem (km)</label>
-      <input type="number" id="distancia" placeholder="Ex.: 300">
-      <label for="consumo">Consumo do veículo (km/L)</label>
-      <input type="number" id="consumo" step="0.1" placeholder="Ex.: 12">
-      <label for="precoCombustivel">Preço do combustível (R$/L)</label>
-      <input type="number" id="precoCombustivel" step="0.01" placeholder="Ex.: 6">
-      <button onclick="calcularCombustivel()">Calcular</button>
-      <div class="resultado" id="resultadoCombustivel"></div>
-    </div>
-  </section>
+    .hero{
+      position:relative;
+      z-index:2;
+      max-width:820px;
+      margin:auto;
+      text-align:center;
+    }
 
-  <div class="ad">
-    Espaço para anúncio
-  </div>
-</main>
+    .hero-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      padding:7px 12px;
+      margin-bottom:16px;
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:999px;
+      background:rgba(255,255,255,.08);
+      color:#dffaff;
+      font-size:12px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.6px;
+    }
 
-<footer>
-  <p><strong>CalculaJá</strong></p>
-  <p>Ferramentas gratuitas para facilitar suas contas.</p>
-  <p><a href="privacidade.html">Política de Privacidade</a> · <a href="termos.html">Termos de Uso</a></p>
-  <p>© 2026 CalculaJá</p>
-</footer>
+    .hero h1{
+      font-size:clamp(38px,7vw,64px);
+      line-height:1.02;
+      letter-spacing:-2px;
+      margin-bottom:16px;
+    }
 
-<script>
-function mostrarResultado(id,mensagem,erro=false){
-  const el=document.getElementById(id);
-  el.innerHTML=mensagem;
-  el.style.display="block";
-  el.classList.toggle("erro",erro);
-}
-function calcularPorcentagem(){
-  const valor=parseFloat(document.getElementById("porcentagemValor").value);
-  const percentual=parseFloat(document.getElementById("porcentagemPercentual").value);
-  if(isNaN(valor)||isNaN(percentual)){
-    return mostrarResultado("resultadoPorcentagem","Digite o valor e a porcentagem.",true);
-  }
-  const resultado=valor*percentual/100;
-  mostrarResultado("resultadoPorcentagem",`${percentual}% de R$ ${valor.toFixed(2)} = R$ ${resultado.toFixed(2)}`);
-}
-function calcularJuros(){
-  const capital=parseFloat(document.getElementById("jurosCapital").value);
-  const taxa=parseFloat(document.getElementById("jurosTaxa").value);
-  const tempo=parseFloat(document.getElementById("jurosTempo").value);
-  const periodo=document.getElementById("jurosPeriodo").value;
-  if(isNaN(capital)||isNaN(taxa)||isNaN(tempo)||capital<0||taxa<0||tempo<0){
-    return mostrarResultado("resultadoJuros","Preencha todos os campos corretamente.",true);
-  }
-  const juros=capital*(taxa/100)*tempo;
-  const total=capital+juros;
-  mostrarResultado("resultadoJuros",`Juros: R$ ${juros.toFixed(2)}<br>Valor final: R$ ${total.toFixed(2)}<br>Taxa: ${taxa}% ao ${periodo==="mes"?"mês":"ano"}`);
-}
-function calcularIdade(){
-  const data=document.getElementById("dataNascimento").value;
-  if(!data)return mostrarResultado("resultadoIdade","Informe sua data de nascimento.",true);
-  const nascimento=new Date(data+"T00:00:00"), hoje=new Date();
-  if(nascimento>hoje)return mostrarResultado("resultadoIdade","A data de nascimento não pode estar no futuro.",true);
-  let anos=hoje.getFullYear()-nascimento.getFullYear();
-  let meses=hoje.getMonth()-nascimento.getMonth();
-  let dias=hoje.getDate()-nascimento.getDate();
-  if(dias<0)meses--;
-  if(meses<0){anos--;meses+=12}
-  mostrarResultado("resultadoIdade",`Você tem aproximadamente ${anos} anos e ${meses} meses.`);
-}
-function calcularIMC(){
-  const peso=parseFloat(document.getElementById("peso").value);
-  const altura=parseFloat(document.getElementById("altura").value);
-  if(isNaN(peso)||isNaN(altura)||peso<=0||altura<=0){
-    return mostrarResultado("resultadoIMC","Digite peso e altura válidos.",true);
-  }
-  const imc=peso/(altura*altura);
-  let classificacao;
-  if(imc<18.5)classificacao="Abaixo do peso";
-  else if(imc<25)classificacao="Peso adequado";
-  else if(imc<30)classificacao="Sobrepeso";
-  else if(imc<35)classificacao="Obesidade grau I";
-  else if(imc<40)classificacao="Obesidade grau II";
-  else classificacao="Obesidade grau III";
-  mostrarResultado("resultadoIMC",`Seu IMC é ${imc.toFixed(1)}<br>Classificação: ${classificacao}`);
-}
-function calcularCombustivel(){
-  const distancia=parseFloat(document.getElementById("distancia").value);
-  const consumo=parseFloat(document.getElementById("consumo").value);
-  const preco=parseFloat(document.getElementById("precoCombustivel").value);
-  if(isNaN(distancia)||isNaN(consumo)||isNaN(preco)||distancia<=0||consumo<=0||preco<0){
-    return mostrarResultado("resultadoCombustivel","Preencha os valores corretamente.",true);
-  }
-  const litros=distancia/consumo;
-  const custo=litros*preco;
-  mostrarResultado("resultadoCombustivel",`Combustível necessário: ${litros.toFixed(2)} litros<br>Custo estimado: R$ ${custo.toFixed(2)}`);
-}
-</script>
-</body>
-</html>
+    .hero h1 .accent{color:var(--cyan)}
+
+    .hero p{
+      max-width:650px;
+      margin:auto;
+      color:#d8e3ff;
+      font-size:18px;
+    }
+
+    .hero-actions{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      margin-top:28px;
+      flex-wrap:wrap;
+    }
+
+    .hero-btn{
+      display:inline-block;
+      padding:13px 20px;
+      border-radius:11px;
+      text-decoration:none;
+      font-weight:800;
+      font-size:14px;
+    }
+
+    .hero-btn.primary{
+      background:#fff;
+      color:var(--navy);
+    }
+
+    .hero-btn.secondary{
+      border:1px solid rgba(255,255,255,.22);
+      color:#fff;
+      background:rgba(255,255,255,.06);
+    }
+
+    /* ===== NAVEGAÇÃO ===== */
+    nav{
+      position:sticky;
+      top:0;
+      z-index:30;
+      background:rgba(255,255,255,.96);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--border);
+      box-shadow:0 4px 18px rgba(15,23,42,.06
