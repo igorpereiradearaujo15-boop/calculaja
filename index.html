@@ -2,261 +2,763 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CalculaJá: calculadoras online gratuitas de porcentagem, juros simples, idade, IMC e combustível.">
+
+  <meta
+    name="description"
+    content="CalculaJá: calculadoras online gratuitas de porcentagem, juros simples, idade, IMC e combustível."
+  >
+
   <meta name="robots" content="index, follow">
-  <meta name="google-adsense-account" content="ca-pub-4891461400342958">
+
+  <meta
+    name="google-adsense-account"
+    content="ca-pub-4891461400342958"
+  >
+
   <title>CalculaJá | Calculadoras Online Gratuitas</title>
 
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4891461400342958" crossorigin="anonymous"></script>
+  <!-- Google AdSense -->
+  <script
+    async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4891461400342958"
+    crossorigin="anonymous">
+  </script>
 
   <style>
-    :root{
-      --navy:#0b1736; --navy2:#14275f; --blue:#2563eb; --blue2:#3b82f6;
-      --cyan:#22d3ee; --soft:#eff6ff; --text:#172033; --muted:#667085;
-      --bg:#f5f7fb; --card:#fff; --border:#e5e7eb; --green:#047857; --red:#b91c1c;
+    :root {
+      --navy: #0b1736;
+      --navy2: #14275f;
+      --blue: #2563eb;
+      --blue2: #3b82f6;
+      --cyan: #22d3ee;
+      --soft: #eff6ff;
+      --text: #172033;
+      --muted: #667085;
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --border: #e5e7eb;
+      --green: #047857;
+      --red: #b91c1c;
+      --shadow: 0 8px 25px rgba(15, 23, 42, 0.05);
     }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:Inter,Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
-    a{color:inherit}
-    header{position:relative;overflow:hidden;color:#fff;background:radial-gradient(circle at 15% 20%,rgba(34,211,238,.18),transparent 28%),radial-gradient(circle at 90% 80%,rgba(59,130,246,.25),transparent 30%),linear-gradient(135deg,var(--navy),var(--navy2));padding:26px 20px 70px}
-    .topbar{position:relative;z-index:2;max-width:1120px;margin:0 auto 55px;display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-size:21px;font-weight:900}
-    .brand-logo{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(145deg,#fff,#dff8ff);box-shadow:0 8px 24px rgba(0,0,0,.18)}
-    .brand-logo svg{width:28px;height:28px}
-    .hero{position:relative;z-index:2;max-width:820px;margin:auto;text-align:center}
-    .badge{display:inline-block;padding:7px 12px;margin-bottom:16px;border:1px solid rgba(255,255,255,.15);border-radius:999px;background:rgba(255,255,255,.08);color:#dffaff;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.6px}
-    h1{font-size:clamp(38px,7vw,64px);line-height:1.02;letter-spacing:-2px;margin-bottom:16px}
-    h1 .accent{color:var(--cyan)}
-    .hero p{max-width:650px;margin:auto;color:#d8e3ff;font-size:18px}
-    .hero-actions{display:flex;justify-content:center;gap:12px;margin-top:28px;flex-wrap:wrap}
-    .hero-btn{display:inline-block;padding:13px 20px;border-radius:11px;text-decoration:none;font-weight:800;font-size:14px}
-    .primary{background:#fff;color:var(--navy)}
-    .secondary{border:1px solid rgba(255,255,255,.22);color:#fff;background:rgba(255,255,255,.06)}
-    nav{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);box-shadow:0 4px 18px rgba(15,23,42,.06)}
-    .nav-inner{max-width:1120px;margin:auto;display:flex;gap:8px;overflow-x:auto;padding:10px 16px}
-    nav a{white-space:nowrap;text-decoration:none;color:#475467;font-size:13px;font-weight:800;padding:9px 12px;border-radius:9px}
-    nav a:hover{background:var(--soft);color:var(--blue)}
-    main{max-width:1120px;margin:auto;padding:42px 16px 70px}
-    .section-title{font-size:28px;letter-spacing:-.7px;margin-bottom:8px}
-    .section-subtitle{color:var(--muted);margin-bottom:24px}
-    .popular{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:48px}
-    .popular-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:22px;text-decoration:none;box-shadow:0 8px 25px rgba(15,23,42,.05);transition:.2s}
-    .popular-card:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(15,23,42,.09)}
-    .icon{width:44px;height:44px;display:grid;place-items:center;border-radius:12px;background:var(--soft);font-size:22px;margin-bottom:13px}
-    .popular-card h3{font-size:17px;margin-bottom:5px}
-    .popular-card p{font-size:13px;color:var(--muted)}
-    .tools{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:24px;box-shadow:0 8px 25px rgba(15,23,42,.05)}
-    .card.full{grid-column:1/-1}
-    .card-head{display:flex;gap:13px;align-items:flex-start;margin-bottom:20px}
-    .card-icon{font-size:26px}
-    .card h2{font-size:21px;line-height:1.2}
-    .card-desc{font-size:13px;color:var(--muted);margin-top:4px}
-    .form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-    label{display:block;font-size:13px;font-weight:800;margin-bottom:6px}
-    input,select{width:100%;padding:12px 13px;border:1px solid #d0d5dd;border-radius:10px;background:#fff;color:var(--text);font-size:15px;outline:none}
-    input:focus,select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
-    .field.full{grid-column:1/-1}
-    button{width:100%;margin-top:15px;padding:13px;border:0;border-radius:10px;background:var(--blue);color:#fff;font-weight:800;font-size:15px;cursor:pointer}
-    button:hover{background:#1d4ed8}
-    .result{display:none;margin-top:15px;padding:14px;border-radius:11px;background:var(--soft);border-left:4px solid var(--blue);font-weight:700}
-    .result.show{display:block}
-    .result small{display:block;color:var(--muted);font-weight:500;margin-top:3px}
-    .ad{min-height:90px;margin:28px 0;border:1px dashed #cbd5e1;border-radius:14px;background:#fff;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:12px}
-    .notice{font-size:12px;color:var(--muted);margin-top:10px}
-    footer{background:var(--navy);color:#cbd5e1;text-align:center;padding:30px 16px}
-    footer strong{color:#fff}
-    footer a{color:#cbd5e1;text-decoration:none;margin:0 7px}
-    @media(max-width:760px){
-      header{padding:22px 16px 55px}
-      .topbar{margin-bottom:42px}
-      .hero p{font-size:16px}
-      .popular,.tools{grid-template-columns:1fr}
-      .card.full{grid-column:auto}
-      .form-grid{grid-template-columns:1fr}
-      .field.full{grid-column:auto}
-      .section-title{font-size:25px}
-      main{padding-top:30px}
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    /* HEADER */
+
+    header {
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      background:
+        radial-gradient(
+          circle at 15% 20%,
+          rgba(34, 211, 238, 0.18),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 90% 80%,
+          rgba(59, 130, 246, 0.25),
+          transparent 30%
+        ),
+        linear-gradient(135deg, var(--navy), var(--navy2));
+
+      padding: 26px 20px 70px;
+    }
+
+    .topbar {
+      position: relative;
+      z-index: 2;
+      max-width: 1120px;
+      margin: 0 auto 55px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      color: #fff;
+      text-decoration: none;
+
+      font-size: 21px;
+      font-weight: 900;
+    }
+
+    .brand-logo {
+      width: 42px;
+      height: 42px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 12px;
+
+      background: linear-gradient(145deg, #fff, #dff8ff);
+
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    }
+
+    .brand-logo svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .hero {
+      position: relative;
+      z-index: 2;
+
+      max-width: 820px;
+      margin: auto;
+
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+
+      padding: 7px 12px;
+      margin-bottom: 16px;
+
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 999px;
+
+      background: rgba(255, 255, 255, 0.08);
+
+      color: #dffaff;
+
+      font-size: 12px;
+      font-weight: 800;
+
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 7vw, 64px);
+      line-height: 1.02;
+      letter-spacing: -2px;
+
+      margin-bottom: 16px;
+    }
+
+    h1 .accent {
+      color: var(--cyan);
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+
+      color: #d8e3ff;
+      font-size: 18px;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+
+      margin-top: 28px;
+
+      flex-wrap: wrap;
+    }
+
+    .hero-btn {
+      display: inline-block;
+
+      padding: 13px 20px;
+
+      border-radius: 11px;
+
+      text-decoration: none;
+
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .primary {
+      background: #fff;
+      color: var(--navy);
+    }
+
+    .secondary {
+      border: 1px solid rgba(255, 255, 255, 0.22);
+
+      color: #fff;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .hero-btn:hover {
+      transform: translateY(-1px);
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+
+      background: rgba(255, 255, 255, 0.96);
+
+      backdrop-filter: blur(12px);
+
+      border-bottom: 1px solid var(--border);
+
+      box-shadow: 0 4px 18px rgba(15, 23, 42, 0.06);
+    }
+
+    .nav-inner {
+      max-width: 1120px;
+      margin: auto;
+
+      display: flex;
+      gap: 8px;
+
+      overflow-x: auto;
+
+      padding: 10px 16px;
+
+      scrollbar-width: thin;
+    }
+
+    nav a {
+      white-space: nowrap;
+
+      text-decoration: none;
+
+      color: #475467;
+
+      font-size: 13px;
+      font-weight: 800;
+
+      padding: 9px 12px;
+
+      border-radius: 9px;
+    }
+
+    nav a:hover {
+      background: var(--soft);
+      color: var(--blue);
+    }
+
+    /* MAIN */
+
+    main {
+      max-width: 1120px;
+      margin: auto;
+
+      padding: 42px 16px 70px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      letter-spacing: -0.7px;
+
+      margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+
+      margin-bottom: 24px;
+    }
+
+    /* POPULAR */
+
+    .popular {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 16px;
+
+      margin-bottom: 48px;
+    }
+
+    .popular-card {
+      background: var(--card);
+
+      border: 1px solid var(--border);
+      border-radius: 18px;
+
+      padding: 22px;
+
+      text-decoration: none;
+
+      box-shadow: var(--shadow);
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .popular-card:hover {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 12px 30px rgba(15, 23, 42, 0.09);
+    }
+
+    .icon {
+      width: 44px;
+      height: 44px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 12px;
+
+      background: var(--soft);
+
+      font-size: 22px;
+
+      margin-bottom: 13px;
+    }
+
+    .popular-card h3 {
+      font-size: 17px;
+
+      margin-bottom: 5px;
+    }
+
+    .popular-card p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* CALCULATORS */
+
+    .tools {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+
+      border: 1px solid var(--border);
+      border-radius: 18px;
+
+      padding: 24px;
+
+      box-shadow: var(--shadow);
+    }
+
+    .card.full {
+      grid-column: 1 / -1;
+    }
+
+    .card-head {
+      display: flex;
+      gap: 13px;
+      align-items: flex-start;
+
+      margin-bottom: 20px;
+    }
+
+    .card-icon {
+      font-size: 26px;
+      line-height: 1;
+    }
+
+    .card h2 {
+      font-size: 21px;
+      line-height: 1.2;
+    }
+
+    .card-desc {
+      font-size: 13px;
+      color: var(--muted);
+
+      margin-top: 4px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 14px;
+    }
+
+    .field {
+      min-width: 0;
+    }
+
+    label {
+      display: block;
+
+      font-size: 13px;
+      font-weight: 800;
+
+      margin-bottom: 6px;
+    }
+
+    input,
+    select {
+      width: 100%;
+
+      padding: 12px 13px;
+
+      border: 1px solid #d0d5dd;
+      border-radius: 10px;
+
+      background: #fff;
+      color: var(--text);
+
+      font-size: 15px;
+
+      outline: none;
+
+      transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: var(--blue);
+
+      box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    button {
+      width: 100%;
+
+      margin-top: 15px;
+
+      padding: 13px;
+
+      border: 0;
+      border-radius: 10px;
+
+      background: var(--blue);
+      color: #fff;
+
+      font-weight: 800;
+      font-size: 15px;
+
+      cursor: pointer;
+
+      transition: background 0.2s ease;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    button:focus-visible,
+    a:focus-visible,
+    input:focus-visible,
+    select:focus-visible {
+      outline: 3px solid rgba(37, 99, 235, 0.35);
+      outline-offset: 2px;
+    }
+
+    /* RESULT */
+
+    .result {
+      display: none;
+
+      margin-top: 15px;
+
+      padding: 14px;
+
+      border-radius: 11px;
+
+      background: var(--soft);
+
+      border-left: 4px solid var(--blue);
+
+      font-weight: 700;
+    }
+
+    .result.show {
+      display: block;
+    }
+
+    .result.error {
+      background: #fef2f2;
+      border-left-color: var(--red);
+      color: var(--red);
+    }
+
+    .result.success {
+      background: #ecfdf5;
+      border-left-color: var(--green);
+    }
+
+    .result small {
+      display: block;
+
+      color: var(--muted);
+
+      font-weight: 500;
+
+      margin-top: 3px;
+    }
+
+    /* ADS */
+
+    .ad {
+      min-height: 90px;
+
+      margin: 28px 0;
+
+      border: 1px dashed #cbd5e1;
+      border-radius: 14px;
+
+      background: #fff;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: #94a3b8;
+
+      font-size: 12px;
+
+      text-align: center;
+    }
+
+    /* NOTICE */
+
+    .notice {
+      font-size: 12px;
+      color: var(--muted);
+
+      margin-top: 10px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: var(--navy);
+
+      color: #cbd5e1;
+
+      text-align: center;
+
+      padding: 30px 16px;
+    }
+
+    footer strong {
+      color: #fff;
+    }
+
+    footer a {
+      color: #cbd5e1;
+
+      text-decoration: none;
+
+      margin: 0 7px;
+    }
+
+    footer a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 760px) {
+      header {
+        padding: 22px 16px 55px;
+      }
+
+      .topbar {
+        margin-bottom: 42px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .popular,
+      .tools {
+        grid-template-columns: 1fr;
+      }
+
+      .card.full {
+        grid-column: auto;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      .section-title {
+        font-size: 25px;
+      }
+
+      main {
+        padding-top: 30px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+        animation: none !important;
+      }
     }
   </style>
 </head>
 
 <body>
-<header>
-  <div class="topbar">
-    <a class="brand" href="#">
-      <span class="brand-logo" aria-hidden="true">
-        <svg viewBox="0 0 32 32" fill="none">
-          <rect x="5" y="3" width="22" height="26" rx="5" stroke="#2563eb" stroke-width="2.5"/>
-          <path d="M9 9h14M10 15h2M16 15h2M22 15h0M10 21h2M16 21h2M22 21h0" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="m20 24 2 2 4-5" stroke="#0891b2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </span>
-      CalculaJá
-    </a>
-  </div>
 
-  <div class="hero">
-    <div class="badge">✦ Calculadoras gratuitas</div>
-    <h1>Calcule <span class="accent">sem complicação.</span></h1>
-    <p>Ferramentas rápidas, simples e gratuitas para resolver cálculos do dia a dia.</p>
-    <div class="hero-actions">
-      <a class="hero-btn primary" href="#calculadoras">Ver calculadoras</a>
-      <a class="hero-btn secondary" href="#mais-usadas">Mais usadas</a>
+  <!-- HEADER -->
+
+  <header>
+    <div class="topbar">
+
+      <a class="brand" href="#" aria-label="CalculaJá - início">
+
+        <span class="brand-logo" aria-hidden="true">
+
+          <svg viewBox="0 0 32 32" fill="none">
+            <rect
+              x="5"
+              y="3"
+              width="22"
+              height="26"
+              rx="5"
+              stroke="#2563eb"
+              stroke-width="2.5"
+            />
+
+            <path
+              d="M9 9h14M10 15h2M16 15h2M22 15h0M10 21h2M16 21h2M22 21h0"
+              stroke="#2563eb"
+              stroke-width="2.5"
+              stroke-linecap="round"
+            />
+
+            <path
+              d="m20 24 2 2 4-5"
+              stroke="#0891b2"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+
+        </span>
+
+        CalculaJá
+
+      </a>
+
     </div>
-  </div>
-</header>
 
-<nav>
-  <div class="nav-inner">
-    <a href="#porcentagem">Porcentagem</a>
-    <a href="#juros">Juros</a>
-    <a href="#idade">Idade</a>
-    <a href="#imc">IMC</a>
-    <a href="#combustivel">Combustível</a>
-  </div>
-</nav>
+    <div class="hero">
 
-<main>
-  <section id="mais-usadas">
-    <h2 class="section-title">Calculadoras mais usadas</h2>
-    <p class="section-subtitle">Atalhos para algumas das ferramentas mais procuradas.</p>
-    <div class="popular">
-      <a class="popular-card" href="#porcentagem"><div class="icon">%</div><h3>Porcentagem</h3><p>Calcule percentuais de forma rápida.</p></a>
-      <a class="popular-card" href="#juros"><div class="icon">R$</div><h3>Juros simples</h3><p>Descubra juros e valor final.</p></a>
-      <a class="popular-card" href="#combustivel"><div class="icon">⛽</div><h3>Combustível</h3><p>Estime litros e custo da viagem.</p></a>
+      <div class="badge">
+        ✦ Calculadoras gratuitas
+      </div>
+
+      <h1>
+        Calcule <span class="accent">sem complicação.</span>
+      </h1>
+
+      <p>
+        Ferramentas rápidas, simples e gratuitas para resolver cálculos do dia a dia.
+      </p>
+
+      <div class="hero-actions">
+
+        <a
+          class="hero-btn primary"
+          href="#calculadoras">
+          Ver calculadoras
+        </a>
+
+        <a
+          class="hero-btn secondary"
+          href="#mais-usadas">
+          Mais usadas
+        </a>
+
+      </div>
+
     </div>
-  </section>
+  </header>
 
-  <div class="ad">Espaço para publicidade</div>
+  <!-- NAVIGATION -->
 
-  <section id="calculadoras">
-    <div class="tools">
-      <article class="card" id="porcentagem">
-        <div class="card-head"><div class="card-icon">%</div><div><h2>Porcentagem</h2><p class="card-desc">Descubra quanto representa uma porcentagem.</p></div></div>
-        <div class="form-grid">
-          <div class="field"><label for="pValor">Valor</label><input id="pValor" type="number" step="any" placeholder="Ex.: 500"></div>
-          <div class="field"><label for="pPercent">Porcentagem (%)</label><input id="pPercent" type="number" step="any" placeholder="Ex.: 15"></div>
-        </div>
-        <button type="button" onclick="calcularPorcentagem()">Calcular</button>
-        <div class="result" id="pResultado"></div>
-      </article>
+  <nav aria-label="Navegação das calculadoras">
 
-      <article class="card" id="juros">
-        <div class="card-head"><div class="card-icon">💰</div><div><h2>Juros simples</h2><p class="card-desc">Calcule juros e montante de uma aplicação.</p></div></div>
-        <div class="form-grid">
-          <div class="field"><label for="jCapital">Capital (R$)</label><input id="jCapital" type="number" step="any" placeholder="Ex.: 1000"></div>
-          <div class="field"><label for="jTaxa">Taxa (%)</label><input id="jTaxa" type="number" step="any" placeholder="Ex.: 2"></div>
-          <div class="field"><label for="jTempo">Tempo</label><input id="jTempo" type="number" step="any" placeholder="Ex.: 6"></div>
-          <div class="field"><label for="jPeriodo">Período</label><select id="jPeriodo"><option value="mes">Meses</option><option value="ano">Anos</option></select></div>
-        </div>
-        <button type="button" onclick="calcularJuros()">Calcular</button>
-        <div class="result" id="jResultado"></div>
-      </article>
+    <div class="nav-inner">
 
-      <article class="card" id="idade">
-        <div class="card-head"><div class="card-icon">🎂</div><div><h2>Calculadora de idade</h2><p class="card-desc">Veja sua idade em anos e meses.</p></div></div>
-        <div class="field"><label for="dataNascimento">Data de nascimento</label><input id="dataNascimento" type="date"></div>
-        <button type="button" onclick="calcularIdade()">Calcular idade</button>
-        <div class="result" id="idadeResultado"></div>
-      </article>
+      <a href="#porcentagem">Porcentagem</a>
+      <a href="#juros">Juros</a>
+      <a href="#idade">Idade</a>
+      <a href="#imc">IMC</a>
+      <a href="#combustivel">Combustível</a>
 
-      <article class="card" id="imc">
-        <div class="card-head"><div class="card-icon">⚖️</div><div><h2>IMC</h2><p class="card-desc">Calcule o índice de massa corporal.</p></div></div>
-        <div class="form-grid">
-          <div class="field"><label for="imcPeso">Peso (kg)</label><input id="imcPeso" type="number" step="any" placeholder="Ex.: 70"></div>
-          <div class="field"><label for="imcAltura">Altura (m)</label><input id="imcAltura" type="number" step="any" placeholder="Ex.: 1.75"></div>
-        </div>
-        <button type="button" onclick="calcularIMC()">Calcular IMC</button>
-        <div class="result" id="imcResultado"></div>
-        <p class="notice">O IMC é apenas um indicador geral e não substitui uma avaliação profissional.</p>
-      </article>
-
-      <article class="card full" id="combustivel">
-        <div class="card-head"><div class="card-icon">⛽</div><div><h2>Calculadora de combustível</h2><p class="card-desc">Estime o consumo e o custo de uma viagem.</p></div></div>
-        <div class="form-grid">
-          <div class="field"><label for="cDistancia">Distância (km)</label><input id="cDistancia" type="number" step="any" placeholder="Ex.: 300"></div>
-          <div class="field"><label for="cConsumo">Consumo (km/L)</label><input id="cConsumo" type="number" step="any" placeholder="Ex.: 12"></div>
-          <div class="field full"><label for="cPreco">Preço do combustível (R$/L)</label><input id="cPreco" type="number" step="any" placeholder="Ex.: 6,00"></div>
-        </div>
-        <button type="button" onclick="calcularCombustivel()">Calcular</button>
-        <div class="result" id="cResultado"></div>
-      </article>
     </div>
-  </section>
 
-  <div class="ad">Espaço para publicidade</div>
-</main>
+  </nav>
 
-<footer>
-  <p><strong>CalculaJá</strong> — calculadoras simples para o seu dia a dia.</p>
-  <p style="margin-top:8px"><a href="#">Política de Privacidade</a> · <a href="#">Termos de Uso</a></p>
-</footer>
+  <!-- MAIN -->
 
-<script>
-  function numero(id){
-    return parseFloat(document.getElementById(id).value);
-  }
+  <main>
 
-  function moeda(valor){
-    return valor.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
-  }
+    <!-- MAIS USADAS -->
 
-  function mostrar(id, html){
-    const el=document.getElementById(id);
-    el.innerHTML=html;
-    el.classList.add('show');
-  }
+    <section id="mais-usadas">
 
-  function calcularPorcentagem(){
-    const valor=numero('pValor'), percentual=numero('pPercent');
-    if(!Number.isFinite(valor)||!Number.isFinite(percentual)){mostrar('pResultado','Preencha os dois campos.');return}
-    const resultado=valor*percentual/100;
-    mostrar('pResultado',moeda(resultado)+'<small>'+percentual+'% de '+moeda(valor)+'</small>');
-  }
+      <h2 class="section-title">
+        Calculadoras mais usadas
+      </h2>
 
-  function calcularJuros(){
-    const capital=numero('jCapital'), taxa=numero('jTaxa'), tempo=numero('jTempo');
-    if(!Number.isFinite(capital)||!Number.isFinite(taxa)||!Number.isFinite(tempo)||capital<0||tempo<0){mostrar('jResultado','Preencha os campos com valores válidos.');return}
-    const juros=capital*(taxa/100)*tempo;
-    const montante=capital+juros;
-    mostrar('jResultado','Juros: '+moeda(juros)+'<small>Valor final: '+moeda(montante)+'</small>');
-  }
-
-  function calcularIdade(){
-    const campo=document.getElementById('dataNascimento').value;
-    if(!campo){mostrar('idadeResultado','Informe sua data de nascimento.');return}
-    const nascimento=new Date(campo+'T00:00:00');
-    const hoje=new Date();
-    if(nascimento>hoje){mostrar('idadeResultado','A data não pode estar no futuro.');return}
-    let anos=hoje.getFullYear()-nascimento.getFullYear();
-    let meses=hoje.getMonth()-nascimento.getMonth();
-    if(hoje.getDate()<nascimento.getDate()) meses--;
-    if(meses<0){anos--;meses+=12}
-    mostrar('idadeResultado',anos+' anos e '+meses+' meses');
-  }
-
-  function calcularIMC(){
-    const peso=numero('imcPeso'), altura=numero('imcAltura');
-    if(!Number.isFinite(peso)||!Number.isFinite(altura)||peso<=0||altura<=0){mostrar('imcResultado','Informe peso e altura válidos.');return}
-    const imc=peso/(altura*altura);
-    let classificacao;
-    if(imc<18.5) classificacao='Abaixo do peso';
-    else if(imc<25) classificacao='Peso adequado';
-    else if(imc<30) classificacao='Sobrepeso';
-    else classificacao='Obesidade';
-    mostrar('imcResultado','IMC: '+imc.toFixed(2).replace('.',',')+'<small>Classificação: '+classificacao+'</small>');
-  }
-
-  function calcularCombustivel(){
-    const distancia=numero('cDistancia'), consumo=numero('cConsumo'), preco=numero('cPreco');
-    if(!Number.isFinite(distancia)||!Number.isFinite(consumo)||!Number.isFinite(preco)||distancia<0||consumo<=0||preco<0){mostrar('cResultado','Preencha os campos com valores válidos.');return}
-    const litros=distancia/consumo;
-    const custo=litros*preco;
-    mostrar('cResultado',litros.toFixed(2).replace('.',',')+' litros<small>Custo estimado: '+moeda(custo)+'</small>');
-  }
-</script>
-</body>
-</html>
+      <p class="section-subtitle">
+        Atalhos para
